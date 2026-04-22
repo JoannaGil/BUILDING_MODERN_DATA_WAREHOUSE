@@ -5,36 +5,132 @@
 <br>
 
 ## Analysing: Explore & Understand Data
-<p align="justify">
-An important step is to explore and understand the data, as well as identify the relationships between the tables involved. 
-One effective way to organize this process is by creating a data integration map, which helps identify the key fields or units that connect one table to another
-</p>
+<p align="justify"> A critical first step in the Silver layer is to explore and fully understand the source data. This includes identifying data structures, column meanings, data quality issues, and relationships between tables. <br><br> One effective way to organize this analysis is by creating a <b>data integration map</b>. This helps identify the key fields (business keys) that connect tables across systems and ensures consistency in downstream transformations. </p>
 <br>
 
 ### Exploring the tables: 
 <img width="598" height="160" alt="Captura de pantalla 2026-04-22 a la(s) 10 33 42 a  m" src="https://github.com/user-attachments/assets/548a5820-7fc8-41b0-aa97-b0241ba264df" />
 <br>
+<p align="justify"> During this phase, each table is reviewed to: </p>
+
+* Understand column definitions and data types<br>
+* Identify primary keys and potential duplicates<br>
+* Detect null values and data inconsistencies<br>
+* Recognize relationships between datasets<br>
 <br>
 
 ## Draw Data Integration (Draw.io)
-<p align="justify">
-After reviewing the tables, the common date was identified.
-</p>
+<p align="justify"> After reviewing the tables, the <b>common keys and relationships</b> between datasets were identified. <br><br> These relationships were then visualized using a data integration diagram, which serves as a reference for how data flows and connects across different tables. </p>
 <br>
 <img width="1352" height="756" alt="Captura de pantalla 2026-04-21 a la(s) 8 04 32 p  m" src="https://github.com/user-attachments/assets/a8536140-8db3-40da-9b1e-e9274fc29733" />
 
-## MetaData Columns 
-<p align="justify">
-They are additional columns or fields added by data engineers to each table. 
-These do not come directly from the source systems, but are used to provide extra information for each record.
-</p>
+## Types of Transformations Applied in This Section
+
+### 1. Derived Columns 
+<p align="justify"> New columns were created based on transformations or calculations from existing fields. This helps reshape the data into a more analytical and business-friendly format. </p>
+
+**Use case:**
+* Splitting composite keys (e.g., prd_key)<br>
+* Creating category identifiers (cat_id)<br>
+* Generating new attributes from existing ones<br>
+
+**Example:** 
+<br><br>
+<img width="659" height="49" alt="Captura de pantalla 2026-04-22 a la(s) 1 35 16 p  m" src="https://github.com/user-attachments/assets/ac5106cc-9852-45c6-bbac-f29082d6b1cb" />
+
+### 2. Handling Missing Information (ISNULL)
+
+<p align="justify"> Missing or NULL values were standardized using business rules to ensure data consistency. <br><br> For example, numeric fields such as cost were defaulted to <b>0</b> when NULL values were detected, based on business approval. </p>
+
+**Important:**
+
+* This avoids issues in aggregations and reporting<br>
+* Ensures consistent downstream calculations<br>
+
+**Example:** 
+<br><br>
+<img width="396" height="35" alt="Captura de pantalla 2026-04-22 a la(s) 2 17 05 p  m" src="https://github.com/user-attachments/assets/c62bd241-44f7-47b0-9dc3-1e5a9da920b0" />
+
+### 3. Data Normalization
+<p align="justify"> Data normalization ensures consistency in format and structure across datasets.</p> 
+
+**This includes:** 
+* Removing extra spaces (TRIM)><br> 
+* Standardizing text case (UPPER)><br> 
+* Aligning key formats (e.g., replacing '-' with '_')><br>
+
+**Why it matters:**
+
+* Ensures successful joins between tables><br>
+* Prevents duplicate mismatches><br>
+* Improves data quality><br>
+
+**Example:** 
+<br><br>
+<img width="376" height="180" alt="Captura de pantalla 2026-04-22 a la(s) 2 18 53 p  m" src="https://github.com/user-attachments/assets/aa2a4143-8b0a-4e16-9dd7-3fa12d5ddf55" />
+
+### 4. Data Type Casting
+
+<p align="justify"> Data types were converted to ensure consistency and compatibility across transformations and reporting layers. <br><br> For example, datetime values were cast to DATE format to standardize date handling. </p>
+
+**Why it matters:**
+
+* Prevents type conflicts
+* Improves query performance
+* Ensures consistent filtering and grouping
+
+**Example:** 
+<br><br>
+<img width="535" height="28" alt="Captura de pantalla 2026-04-22 a la(s) 2 22 14 p  m" src="https://github.com/user-attachments/assets/9cb59074-a912-43a1-837f-6f24aabe5250" />
+
+### 5. Data Enrichment
+
+<p align="justify"> Raw coded values were transformed into more descriptive, user-friendly values to improve readability and usability. </p>
+
+**Examples:**
+
+M → Mountain  <br>
+R → Road        <br>
+S → Other Sales   <br>
+T → Touring         <br>
+
+**Why it matters:**
+
+* Improves business understanding
+* Makes reports more intuitive
+* Reduces dependency on lookup tables
+
+
+**Example:** 
+<br><br>
+<img width="376" height="180" alt="Captura de pantalla 2026-04-22 a la(s) 2 18 53 p  m" src="https://github.com/user-attachments/assets/d4680fab-3c07-4045-9fbf-a29d5e7414d6" />
+
+
+
+### 6. Temporal Data Transformation
+<p align="justify"> Date ranges were corrected to avoid overlaps and ensure continuity in product history. <br><br> The end date (`prd_end_dt`) was recalculated as: </p>
+One day before the next prd_start_dt for the same product
+<p align="justify"> This was implemented using a window function (`LEAD()`), ensuring proper sequencing of product records over time. </p>
+
+**Why it matters:**
+
+* Prevents overlapping date ranges
+* Supports historical tracking (SCD-like behavior)
+* Improves accuracy in time-based analysis
+
+**Example:** 
+<br><br>
+<img width="1059" height="30" alt="Captura de pantalla 2026-04-22 a la(s) 2 35 16 p  m" src="https://github.com/user-attachments/assets/26c02793-a056-427d-809c-55d15beaf00a" />
+
+## Table Before and After Transformations
+
+**Before** 
+<img width="503" height="56" alt="Captura de pantalla 2026-04-22 a la(s) 2 40 55 p  m" src="https://github.com/user-attachments/assets/8419810d-f0ee-46c2-9ac1-f2b40af40330" />
+
 <br>
 
-**Example**
-<img width="453" height="217" alt="Captura de pantalla 2026-04-21 a la(s) 8 55 32 p  m" src="https://github.com/user-attachments/assets/7426ea84-c39b-484b-8036-bd03821fa8c8" />
-<br>
-<img width="595" height="118" alt="Captura de pantalla 2026-04-22 a la(s) 10 40 52 a  m" src="https://github.com/user-attachments/assets/850ac46f-7708-4b4a-ba72-a9125b83a2b3" />
+**After** 
+<img width="647" height="56" alt="Captura de pantalla 2026-04-22 a la(s) 2 39 46 p  m" src="https://github.com/user-attachments/assets/e83f560e-4716-474c-a0f7-076409db352a" />
 
-<p align="justify">
-The table has now been created, but before loading the data, it must be cleaned and standardized one by one.
-</p>
+<br>
+
