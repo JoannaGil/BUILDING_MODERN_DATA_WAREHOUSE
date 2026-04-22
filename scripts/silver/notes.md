@@ -24,7 +24,7 @@
 <br>
 <img width="1352" height="756" alt="Captura de pantalla 2026-04-21 a la(s) 8 04 32 p  m" src="https://github.com/user-attachments/assets/a8536140-8db3-40da-9b1e-e9274fc29733" />
 
-## Types of Transformations Applied in This Section
+## Types of Transformations Applied in crm_prd_info
 
 ### 1. Derived Columns 
 <p align="justify"> New columns were created based on transformations or calculations from existing fields. This helps reshape the data into a more analytical and business-friendly format. </p>
@@ -133,4 +133,28 @@ One day before the next prd_start_dt for the same product
 <img width="647" height="56" alt="Captura de pantalla 2026-04-22 a la(s) 2 39 46 p  m" src="https://github.com/user-attachments/assets/e83f560e-4716-474c-a0f7-076409db352a" />
 
 <br>
+
+## Types of Transformations Applied in crm_sales_details
+
+### 1. Handling Invalid data & Data Type Casting 
+
+<img width="669" height="71" alt="Captura de pantalla 2026-04-22 a la(s) 6 51 49 p  m" src="https://github.com/user-attachments/assets/40cd6111-9a87-41d2-a9de-9175052f93f9" />
+
+### 2.  Handling Missing Information (ISNULL)
+
+<img width="951" height="92" alt="Captura de pantalla 2026-04-22 a la(s) 6 55 12 p  m" src="https://github.com/user-attachments/assets/b070ba40-0557-4b51-a3a3-c61866e7aea7" />
+
+## Table Before and After Transformations
+
+**Before** 
+<img width="534" height="58" alt="Captura de pantalla 2026-04-22 a la(s) 6 57 34 p  m" src="https://github.com/user-attachments/assets/b3325117-b29b-4704-a792-dc0884a42e1d" />
+
+<br>
+
+**After** 
+<img width="667" height="59" alt="Captura de pantalla 2026-04-22 a la(s) 6 58 44 p  m" src="https://github.com/user-attachments/assets/1bb23fb3-0336-4a49-89ce-f8824d6a1ab9" />
+
+<br>
+
+
 
