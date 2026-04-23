@@ -11,7 +11,6 @@
    - Load cleaned data into the silver layer
    ============================================================ */
 
-
 /* ============================================================
    1. INITIAL DATA REVIEW
    Purpose: Inspect the raw source data before applying any
