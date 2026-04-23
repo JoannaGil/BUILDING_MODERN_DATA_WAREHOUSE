@@ -22,8 +22,6 @@
      during transformation before loading into silver
    ============================================================ */
 
-
-
 /* ============================================================
    1. INITIAL SOURCE REVIEW
    Purpose:
@@ -43,7 +41,6 @@ SELECT
 FROM bronze.crm_sales_details;
 
 
-
 /* ============================================================
    2. CHECK FOR UNWANTED SPACES IN ORDER NUMBER
    Purpose:
@@ -54,7 +51,6 @@ SELECT
     sls_ord_num
 FROM bronze.crm_sales_details
 WHERE sls_ord_num <> TRIM(sls_ord_num);
-
 
 
 /* ============================================================
@@ -85,7 +81,6 @@ WHERE sls_prd_key NOT IN (
 */
 
 
-
 /* ============================================================
    4. VALIDATE CUSTOMER ID AGAINST REFERENCE TABLE
    Purpose:
@@ -114,7 +109,6 @@ WHERE sls_cust_id NOT IN (
 */
 
 
-
 /* ============================================================
    5. DATE CONVERSION STRATEGY
    Purpose:
@@ -131,7 +125,6 @@ WHERE sls_cust_id NOT IN (
    ============================================================ */
 
 
-
 /* ============================================================
    6. VALIDATE ORDER DATE
    ============================================================ */
@@ -140,7 +133,6 @@ SELECT
 FROM bronze.crm_sales_details
 WHERE sls_order_dt <= 0
    OR LEN(sls_order_dt) <> 8;
-
 
 
 /* ============================================================
@@ -153,7 +145,6 @@ WHERE sls_ship_dt <= 0
    OR LEN(sls_ship_dt) <> 8;
 
 
-
 /* ============================================================
    8. VALIDATE DUE DATE
    ============================================================ */
@@ -162,7 +153,6 @@ SELECT
 FROM bronze.crm_sales_details
 WHERE sls_due_dt <= 0
    OR LEN(sls_due_dt) <> 8;
-
 
 
 /* ============================================================
@@ -197,7 +187,6 @@ SELECT
 FROM bronze.crm_sales_details;
 
 
-
 /* ============================================================
    10. VALIDATE DATE ORDER LOGIC
    Purpose:
@@ -215,7 +204,6 @@ WHERE sls_order_dt > sls_ship_dt
    Expected result:
    No rows returned.
 */
-
 
 
 /* ============================================================
@@ -239,7 +227,6 @@ WHERE sls_sales <> sls_quantity * sls_price
    OR sls_quantity <= 0
    OR sls_price <= 0
 ORDER BY sls_sales, sls_quantity, sls_price;
-
 
 
 /* ============================================================
@@ -272,7 +259,6 @@ SELECT DISTINCT
         ELSE sls_price
     END AS sls_price
 FROM bronze.crm_sales_details;
-
 
 
 /* ============================================================
@@ -317,7 +303,6 @@ SELECT
         ELSE sls_price
     END AS sls_price
 FROM bronze.crm_sales_details;
-
 
 
 /* ============================================================
@@ -377,7 +362,6 @@ SELECT
 FROM bronze.crm_sales_details;
 
 
-
 /* ============================================================
    15. POST-LOAD VALIDATION: INVALID DATE ORDER
    Purpose:
@@ -388,7 +372,6 @@ SELECT
 FROM silver.crm_sales_details
 WHERE sls_order_dt > sls_ship_dt
    OR sls_order_dt > sls_due_dt;
-
 
 
 /* ============================================================
@@ -410,7 +393,6 @@ WHERE sls_sales <> sls_quantity * sls_price
    OR sls_quantity <= 0
    OR sls_price <= 0
 ORDER BY sls_sales, sls_quantity, sls_price;
-
 
 
 /* ============================================================
