@@ -81,7 +81,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    4. CHECK CATEGORY KEY FORMAT AGAINST REFERENCE TABLE
    Purpose:
@@ -91,7 +90,6 @@ FROM bronze.crm_prd_info;
 SELECT DISTINCT
     id
 FROM bronze.erp_px_cat_g1v2;
-
 
 
 /* ============================================================
@@ -115,7 +113,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    6. CHECK PRODUCT KEY FORMAT AGAINST SALES TABLE
    Purpose:
@@ -125,7 +122,6 @@ FROM bronze.crm_prd_info;
 SELECT DISTINCT
     sls_prd_key
 FROM bronze.crm_sales_details;
-
 
 
 /* ============================================================
@@ -152,7 +148,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    8. PRODUCT NAME QUALITY CHECK
    Purpose:
@@ -167,8 +162,6 @@ WHERE prd_nm <> TRIM(prd_nm);
    Result:
    No unwanted spaces were found in prd_nm.
 */
-
-
 
 /* ============================================================
    9. PRODUCT COST QUALITY CHECK
@@ -185,7 +178,6 @@ SELECT
 FROM bronze.crm_prd_info
 WHERE prd_cost < 0
    OR prd_cost IS NULL;
-
 
 
 /* ============================================================
@@ -207,7 +199,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    11. PRODUCT LINE STANDARDIZATION REVIEW
    Purpose:
@@ -217,7 +208,6 @@ FROM bronze.crm_prd_info;
 SELECT DISTINCT
     prd_line
 FROM bronze.crm_prd_info;
-
 
 
 /* ============================================================
@@ -251,7 +241,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    13. DATE VALIDATION
    Purpose:
@@ -262,7 +251,6 @@ SELECT
     *
 FROM bronze.crm_prd_info
 WHERE prd_end_dt < prd_start_dt;
-
 
 
 /* ============================================================
@@ -294,7 +282,6 @@ SELECT
     ) AS prd_end_dt_test
 FROM bronze.crm_prd_info
 WHERE prd_key IN ('AC-HE-HL-U509R', 'AC-HE-HL-U509');
-
 
 
 /* ============================================================
@@ -336,7 +323,6 @@ SELECT
 FROM bronze.crm_prd_info;
 
 
-
 /* ============================================================
    16. FINAL LOAD INTO SILVER
    Purpose:
@@ -376,7 +362,6 @@ SELECT
         )
     ) AS prd_end_dt
 FROM bronze.crm_prd_info;
-
 
 
 /* ============================================================
