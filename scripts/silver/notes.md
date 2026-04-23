@@ -156,7 +156,7 @@ One day before the next prd_start_dt for the same product
 
 <br><br>
 
-## Types of Transformations Applied in crm_sales_details
+## Types of Transformations Applied in erp_cust_az12
 
 ### 1. Handling and Correcting Invalid Data
 
@@ -177,6 +177,26 @@ One day before the next prd_start_dt for the same product
 <img width="320" height="58" alt="Captura de pantalla 2026-04-22 a la(s) 9 07 40 p  m" src="https://github.com/user-attachments/assets/d6ab1e7b-da24-4895-ad61-acbe10aa49a8" />
 
 <br><br>
+
+## Table Before and After Transformations - erp_loc_a101
+
+**Before** 
+<img width="151" height="58" alt="Captura de pantalla 2026-04-23 a la(s) 10 25 54 a  m" src="https://github.com/user-attachments/assets/9935de69-6c7b-4e58-aa70-ac5b0f9b9734" />
+
+<br>
+
+**After** 
+<img width="292" height="58" alt="Captura de pantalla 2026-04-23 a la(s) 10 26 12 a  m" src="https://github.com/user-attachments/assets/0de7c08b-7c9d-488b-8bb4-61978b22a3a8" />
+
+## Table Before and After Transformations - erp_px_cat_g1v1
+
+**Before** 
+<img width="306" height="60" alt="Captura de pantalla 2026-04-23 a la(s) 11 11 57 a  m" src="https://github.com/user-attachments/assets/d19a0af1-920a-4114-bfd6-05b9bd1468d5" />
+
+<br>
+
+**After** 
+<img width="438" height="56" alt="Captura de pantalla 2026-04-23 a la(s) 11 08 57 a  m" src="https://github.com/user-attachments/assets/5c06afa4-9b7c-40c9-bcf7-a17e40444b79" />
 
 
 
