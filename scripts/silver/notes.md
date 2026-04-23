@@ -132,15 +132,15 @@ One day before the next prd_start_dt for the same product
 **After** 
 <img width="647" height="56" alt="Captura de pantalla 2026-04-22 a la(s) 2 39 46 p  m" src="https://github.com/user-attachments/assets/e83f560e-4716-474c-a0f7-076409db352a" />
 
-<br>
+<br><br>
 
 ## Types of Transformations Applied in crm_sales_details
 
-### 1. Handling Invalid data & Data Type Casting 
+### 1. Handling Invalid Data and Data Type Casting 
 
 <img width="669" height="71" alt="Captura de pantalla 2026-04-22 a la(s) 6 51 49 p  m" src="https://github.com/user-attachments/assets/40cd6111-9a87-41d2-a9de-9175052f93f9" />
 
-### 2.  Handling Missing Information (ISNULL)
+### 2. Handling Missing Data Using Default Value Imputation (ISNULL)
 
 <img width="951" height="92" alt="Captura de pantalla 2026-04-22 a la(s) 6 55 12 p  m" src="https://github.com/user-attachments/assets/b070ba40-0557-4b51-a3a3-c61866e7aea7" />
 
@@ -154,7 +154,29 @@ One day before the next prd_start_dt for the same product
 **After** 
 <img width="667" height="59" alt="Captura de pantalla 2026-04-22 a la(s) 6 58 44 p  m" src="https://github.com/user-attachments/assets/1bb23fb3-0336-4a49-89ce-f8824d6a1ab9" />
 
+<br><br>
+
+## Types of Transformations Applied in crm_sales_details
+
+### 1. Handling and Correcting Invalid Data
+
+<img width="666" height="140" alt="Captura de pantalla 2026-04-22 a la(s) 9 01 51 p  m" src="https://github.com/user-attachments/assets/f5341740-4bd9-46ca-8c5c-6e3cf6bbe992" />
+
+### 2. Data Standardization
+
+<img width="1028" height="164" alt="Captura de pantalla 2026-04-22 a la(s) 9 02 46 p  m" src="https://github.com/user-attachments/assets/622a8fef-5b69-4d91-b1eb-6fe030e8f510" />
+
+## Table Before and After Transformations
+
+**Before** 
+<img width="211" height="56" alt="Captura de pantalla 2026-04-22 a la(s) 9 08 10 p  m" src="https://github.com/user-attachments/assets/3aabffe4-fff7-4e22-ba6f-825474f9f092" />
+
 <br>
+
+**After** 
+<img width="320" height="58" alt="Captura de pantalla 2026-04-22 a la(s) 9 07 40 p  m" src="https://github.com/user-attachments/assets/d6ab1e7b-da24-4895-ad61-acbe10aa49a8" />
+
+<br><br>
 
 
 
