@@ -9,7 +9,11 @@
 <br>
 
 ### Exploring the tables: 
-<img width="598" height="160" alt="Captura de pantalla 2026-04-22 a la(s) 10 33 42 a  m" src="https://github.com/user-attachments/assets/548a5820-7fc8-41b0-aa97-b0241ba264df" />
+
+<img width="332" height="95" alt="Captura de pantalla 2026-04-23 a la(s) 11 24 18 a  m" src="https://github.com/user-attachments/assets/00b02776-8c3d-4c16-b269-254cd6923447" />
+<br>
+<img width="471" height="56" alt="Captura de pantalla 2026-04-23 a la(s) 11 22 17 a  m" src="https://github.com/user-attachments/assets/5508e0ca-4c6c-4c79-bd98-4d1f5ea418bc" />
+
 <br>
 <p align="justify"> During this phase, each table is reviewed to: </p>
 
@@ -187,6 +191,7 @@ One day before the next prd_start_dt for the same product
 
 **After** 
 <img width="292" height="58" alt="Captura de pantalla 2026-04-23 a la(s) 10 26 12 a  m" src="https://github.com/user-attachments/assets/0de7c08b-7c9d-488b-8bb4-61978b22a3a8" />
+<br><br>
 
 ## Table Before and After Transformations - erp_px_cat_g1v1
 
