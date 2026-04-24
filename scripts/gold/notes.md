@@ -60,6 +60,14 @@ For the dimention of custumer table the surrogate key is - custumer id to conect
 
 <img width="921" height="315" alt="Captura de pantalla 2026-04-24 a la(s) 12 09 23 p  m" src="https://github.com/user-attachments/assets/7af6095d-87fe-4e00-984b-6cbb251c2135" />
 
+## Building Fact
+
+-- Building FACT 
+-- Use the dimension´s surrogate keys instead of IDs to easily connect facts with dimensions 
+
+<img width="721" height="435" alt="Captura de pantalla 2026-04-24 a la(s) 1 18 51 p  m" src="https://github.com/user-attachments/assets/46170ec6-bf4c-47bc-91d0-169e58350525" />
+
+
 
 
 
