@@ -68,8 +68,13 @@ For the dimention of custumer table the surrogate key is - custumer id to conect
 <img width="721" height="435" alt="Captura de pantalla 2026-04-24 a la(s) 1 18 51 p  m" src="https://github.com/user-attachments/assets/46170ec6-bf4c-47bc-91d0-169e58350525" />
 
 
+## Draw The Data Model 
 
+<img width="1333" height="501" alt="Captura de pantalla 2026-04-24 a la(s) 1 53 44 p  m" src="https://github.com/user-attachments/assets/394918de-6dae-4f00-887f-a47fb4ca49ef" />
 
+## Create the data Catalog
+
+<img width="1369" height="710" alt="Captura de pantalla 2026-04-24 a la(s) 2 10 08 p  m" src="https://github.com/user-attachments/assets/1cc8ed6d-c22a-4855-ac39-0d9dbe981a5c" />
 
 
 
