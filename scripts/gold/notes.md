@@ -52,6 +52,15 @@ all the informacion
 
 <img width="1093" height="831" alt="Captura de pantalla 2026-04-23 a la(s) 1 50 12 p  m" src="https://github.com/user-attachments/assets/2babbe2a-f12a-477a-9e25-71d77aad20ee" />
 
+## Surrogate Key 
+
+For the dimention of custumer table the surrogate key is - custumer id to conect the data model. 
+
+
+
+<img width="921" height="315" alt="Captura de pantalla 2026-04-24 a la(s) 12 09 23 p  m" src="https://github.com/user-attachments/assets/7af6095d-87fe-4e00-984b-6cbb251c2135" />
+
+
 
 
 
