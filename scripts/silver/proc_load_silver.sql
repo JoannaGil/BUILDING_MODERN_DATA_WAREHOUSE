@@ -214,14 +214,14 @@ BEGIN
         -- Loading erp_loc_a101
         SET @start_time = GETDATE();
 		PRINT '>> Truncating Table: silver.erp_loc_a101';
-		TRUNCATE TABLE silver.erp_loc_a101;
+	TRUNCATE TABLE silver.erp_loc_a101;
 		PRINT '>> Inserting Data Into: silver.erp_loc_a101';
-		INSERT INTO silver.erp_loc_a101 (
+	INSERT INTO silver.erp_loc_a101 (
     cid,
     cntry
     )
     SELECT
-        REPLACE(cid, '-', ' ') AS cid,
+        REPLACE(cid, '-', '') AS cid,
         CASE
             WHEN NULLIF(
                 LTRIM(RTRIM(
